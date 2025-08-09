@@ -1,0 +1,347 @@
+/* =========================
+   Global Styles & Variables
+   ========================= */
+:root {
+  --brand: #bb1919;
+  --muted: #6b7280;
+  --bg: #f6f7f8;
+  --card: #fff;
+  --maxw: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  /* Use Inter as the primary font, now loaded from Google Fonts */
+  font-family: 'Inter', "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: #111827;
+  line-height: 1.45;
+}
+
+/* =========================
+   Header
+   ========================= */
+.header {
+  background: var(--brand);
+  color: #fff;
+  padding: 12px 16px;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.tag {
+  opacity: .95;
+}
+
+/* =========================
+   Layout Container
+   ========================= */
+.container {
+  max-width: var(--maxw);
+  margin: 16px auto;
+  display: grid;
+  grid-template-columns: 220px 1fr 320px;
+  gap: 16px;
+  padding: 0 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1100px) {
+  .container {
+    grid-template-columns: 1fr 320px;
+  }
+  .leftcol {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .rightcol,
+  .sticky {
+    position: static;
+  }
+}
+
+/* =========================
+   Columns & Sidebar
+   ========================= */
+.leftcol {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rightcol {
+  position: relative;
+}
+
+.sticky {
+  position: sticky;
+  top: 82px; /* Header height + gap */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* =========================
+   Ads & Cards
+   ========================= */
+.ad {
+  background: var(--card);
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 12px rgba(3, 12, 23, 0.04);
+}
+
+.ad img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.ad .title {
+  color: var(--brand);
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.ad .copy {
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+/* Restaurant ad emphasis */
+.ad.restaurant .title {
+  font-weight: 900;
+}
+.ad.restaurant .copy {
+  font-weight: 700;
+}
+
+.card {
+  background: var(--card);
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 6px 18px rgba(3, 12, 23, 0.04);
+}
+
+.card h4 {
+  margin: 0 0 8px 0;
+  color: #111827;
+}
+
+/* =========================
+   Center Column (Main Content)
+   ========================= */
+.center {
+  min-height: 60vh;
+}
+
+.navtabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 8px 10px;
+  background: var(--card);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  font-weight: 700;
+  border: none; /* remove default button border */
+}
+
+.tab.active {
+  color: var(--brand);
+  box-shadow: 0 6px 10px rgba(3, 12, 23, 0.03);
+}
+
+.page {
+  background: linear-gradient(180deg, #fafafa, #fff);
+  padding: 14px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(3, 12, 23, 0.04);
+}
+
+.page h1 {
+  margin: 0 0 10px 0;
+  color: var(--brand);
+}
+
+/* =========================
+   Article Styling
+   ========================= */
+.article-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.article {
+  background: var(--card);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.article .article-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.meta {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.leftmeta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.headline {
+  /* Use Georgia for headlines, loaded from Google Fonts */
+  font-family: 'Georgia', "Times New Roman", serif;
+  font-weight: 800;
+  font-size: 1.06rem;
+  color: #071124;
+  cursor: pointer;
+}
+
+.byline {
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.tagline {
+  color: var(--muted);
+  font-size: .9rem;
+  white-space: nowrap;
+}
+
+.details {
+  padding: 12px 14px 16px 14px;
+  border-top: 1px dashed #f0f0f0;
+  display: none; /* Toggled by JS */
+  background: #fff;
+  color: #111827;
+  line-height: 1.6;
+}
+
+/* =========================
+   Sidebar Widgets
+   ========================= */
+
+/* Quick Reactions */
+.reactions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.react-btn {
+  cursor: pointer;
+  border: none;
+  background: #f3f4f6;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-weight: 700;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.react-counter {
+  font-weight: 800;
+  color: var(--brand);
+}
+
+/* Trending Hashtags */
+.trending-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.trend-tag {
+  display: inline-block;
+  background: #fff2f2;
+  color: var(--brand);
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid rgba(187, 25, 25, 0.08);
+}
+
+/* Food Blog */
+.food-item {
+  margin-bottom: 10px;
+}
+
+.food-item:last-child {
+  margin-bottom: 0;
+}
+
+.food-item h5 {
+  margin: 0;
+  color: var(--brand);
+  font-size: .98rem;
+}
+
+.food-item p {
+  margin: 6px 0 0 0;
+  color: var(--muted);
+  font-size: .88rem;
+}
+
+/* =========================
+   Footer
+   ========================= */
+footer {
+  text-align: center;
+  color: var(--muted);
+  margin: 20px 0 40px 0;
+  grid-column: 1 / -1; /* Span all grid columns */
+}
+
+/* =========================
+   Helper Classes
+   ========================= */
+.small {
+  font-size: .9rem;
+  color: var(--muted);
+}

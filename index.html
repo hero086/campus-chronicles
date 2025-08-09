@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Campus Chronicle</title>
+  
+  <!-- Link to your external CSS file -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Preconnect to Google Fonts for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=Georgia&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<header class="header">
+  <div style="display:flex;gap:12px;align-items:center">
+    <div class="brand">Campus Chronicle</div>
+    <div class="tag small">Student-run • Satire & Campus Life</div>
+  </div>
+  <div style="margin-left:auto;" class="small">9 August 2025</div>
+</header>
+
+<div class="container" role="main">
+
+  <!-- LEFT column: fixed ads -->
+  <aside class="leftcol" aria-label="ads">
+    <div id="adsPool"></div>
+  </aside>
+
+  <!-- CENTER: main content area -->
+  <main class="center" id="mainArea">
+    <div class="navtabs" id="navTabs" aria-hidden="false"></div>
+    <div id="pageWrapper"></div>
+  </main>
+
+  <!-- RIGHT column: sidebar -->
+  <aside class="rightcol" aria-label="sidebar">
+    <div class="sticky">
+      <div class="card">
+        <h4>Quick Reactions</h4>
+        <div class="reactions" id="reactions">
+          <button class="react-btn" data-emoji="🔥">🔥 <span class="react-counter" id="c-fire">0</span></button>
+          <button class="react-btn" data-emoji="😂">😂 <span class="react-counter" id="c-lol">0</span></button>
+          <button class="react-btn" data-emoji="👏">👏 <span class="react-counter" id="c-clap">0</span></button>
+          <button class="react-btn" data-emoji="🤯">🤯 <span class="react-counter" id="c-wow">0</span></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h4>Trending</h4>
+        <div class="trending-list" id="trendingList"></div>
+      </div>
+
+      <div class="card">
+        <h4>Restaurant & Food Blog</h4>
+        <div id="foodBlog"></div>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<footer>Campus Chronicle • For testing and college events • (fictional)</footer>
+
+<!-- Link to your external JavaScript file -->
+<script src="script.js"></script>
+
+</body>
+</html>
