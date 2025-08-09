@@ -10,7 +10,7 @@ function byline(idx) {
 }
 
 const AD_POOL = [
-    { title: "Campus Culinary Destination — Student Special", copy: "Click to view the student menu & discounts.", link: https://hero086.github.io/restaurant-meanu/", restaurant: true, img: "https://plus.unsplash.com/premium_photo-1661953124283-76d0a8436b87?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudHxlbnwwfHwwfHx8MA%3D%3D" },
+    { title: "Campus Culinary Destination — Student Special", copy: "Click to view the student menu & discounts.", link: "https://hero086.github.io/restaurant-meanu/", restaurant: true, img: "https://plus.unsplash.com/premium_photo-1661953124283-76d0a8436b87?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudHxlbnwwfHwwfHx8MA%3D%3D" },
     { title: "Textbook Swap", copy: "Used textbooks, fair prices. Swap table outside Student Union.", img: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=800" },
     { title: "2AM Espresso Deals", copy: "The Midnight Mug offers double-shot discounts for students.", img: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&q=80&w=800" },
     { title: "Resume Tune-Up — Free 15 min", copy: "Peer mentors at Career Hub. Walk-ins welcome.", img: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=800" },
@@ -403,6 +403,7 @@ router();
 // Set initial reaction counts
 
 updateReactionDisplay();
+
 
 
 
